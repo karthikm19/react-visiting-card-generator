@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import VisitingCard from './components/VisitingCard';
+import profiles from './profileData';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+        <h2 style={{ fontWeight: 'bold' }}>Visiting Card Generator</h2>
+        { profiles.map(profile => (
+          <VisitingCard 
+            image={profile.image}
+            name={profile.name}
+            title={profile.title}
+            company={profile.company}
+            intro={profile.intro}
+          />
+        ))}
+      </div>
     </div>
   );
 }
