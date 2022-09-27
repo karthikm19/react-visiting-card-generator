@@ -26,7 +26,7 @@ function App() {
         <h2 style={{ fontWeight: 'bold' }}>Visiting Card Generator</h2>
         { profiles.map(profile => (
           <VisitingCard 
-            image={profile.image}
+            image={`https://robohash.org/${Math.random()}`}
             name={fullname}
             title={profile.title}
             company={profile.company}
